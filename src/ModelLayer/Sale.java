@@ -1,13 +1,14 @@
 package ModelLayer;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import ModelLayer.Enums.DeliveryStatus;
 
 public class Sale {
 	private int id;
-	private Date date;
+	private Date deliveryDate;
 	private DeliveryStatus deliverystatus;
 	private Customer customer;
 	private int invoiceno;
@@ -21,6 +22,12 @@ public class Sale {
 		this.customer = customer;
 		this.invoiceno = invoiceno;
 		partorders = new ArrayList<PartOrder>();
+	}
+	
+	public Sale()
+	{
+		this.deliverystatus = DeliveryStatus.NOTDELIVERED;
+		this.partorders = new ArrayList<PartOrder>();
 	}
 /**
  *  Gets the id
@@ -39,16 +46,16 @@ public class Sale {
 	 * @return date
 	 */
 
-	public Date getDate() {
-		return date;
+	public Date getDeliveryDate() {
+		return deliveryDate;
 	}
 
 	
 	/**
 	 * Sets the date 
 	 */
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDeliveryDate(Date date) {
+		this.deliveryDate = date;
 	}
 
 	/**
