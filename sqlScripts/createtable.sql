@@ -1,13 +1,24 @@
-use dmaa0914_2sem_1;
-create table Customer(
+use WesternStyle;
+
+	create table City(
+		zipcode int not null primary key,
+		name	nvarchar(100) not null	
+	)
+
+	create table Customer(
 	 id			int			not null primary key identity(1,1),
 	 fname      nvarchar(15) not null,
      lname      nvarchar(15)       not null,
      adress     nvarchar(100)     not null,
-     zipcode    nvarchar(15) not null,
-	 city		nvarchar(30) not null,
+     zipcode    int not null,
 	 phonenumber nvarchar(25) not null,
-	 email		nvarchar(100) not null
+	 email		nvarchar(100) not null,
+	 foreign key(zipcode) references City(zipcode)
+	 );
+
+	 create table Country(
+		id int not null primary key identity(1,1),
+		name nvarchar(100) not null
 	 );
 
 	 create table Invoice(
@@ -32,9 +43,10 @@ create table Customer(
 	 name nvarchar(max) not null,
 	 [address] nvarchar(max) not null,
 	 city nvarchar(max) not null,
-	 country nvarchar(max) not null,
 	 phonenumber nvarchar(max) not null,
 	 email nvarchar(max) not null,
+	 countryid int not null,
+	 foreign key(countryid) references Country(id)
 	 );
 
 
@@ -44,11 +56,12 @@ create table Customer(
 	 purchaseprice decimal(10,2) not null,
 	 salesprice decimal(10,2) not null,
 	 rentprice decimal(10,2) null,
-	 countryoforigin nvarchar(max) not null,
 	 minstock int not null,
 	 amountinstock int not null,
 	 supplierid int not null,
-	 foreign key(supplierid) references Supplier(id)
+	 countryid int not null,
+	 foreign key(supplierid) references Supplier(id),
+	 foreign key(countryid) references Country(id)
 	 );
 	
 	 
