@@ -24,7 +24,7 @@ public class DBConnection
     private DatabaseMetaData dma;
     private static Connection con;
     // an instance of the class is generetated
-    private static DBConnection  instance = null;
+    private static DBConnection instance = null;
 
     /**
      * the constructor is private to ensure that only one object of this class is created
@@ -90,11 +90,11 @@ public class DBConnection
     }
     
     //this method is used to get the instance of the connection
-    public static DBConnection getInstance()
+    public static DbConnection getInstance()
     {
         if (instance == null)
         {
-          instance = new DBConnection();
+          instance = new DbConnection();
         }
         
         return instance;
