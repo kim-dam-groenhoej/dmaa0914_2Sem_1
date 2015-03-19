@@ -9,7 +9,7 @@ use dmaa0914_2Sem_1;
 	 id			int			not null primary key identity(1,1),
 	 fname      nvarchar(15) not null,
      lname      nvarchar(15)       not null,
-     adress     nvarchar(100)     not null,
+     [address]     nvarchar(100)     not null,
      zipcode    int not null,
 	 phonenumber nvarchar(25) not null,
 	 email		nvarchar(100) not null,

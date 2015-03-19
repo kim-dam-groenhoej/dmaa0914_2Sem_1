@@ -28,7 +28,7 @@ INSERT INTO [dbo].[Country]
 INSERT INTO [dbo].[Customer]
            ([fname]
            ,[lname]
-           ,[adress]
+           ,[address]
            ,[zipcode]
            ,[phonenumber]
            ,[email])
