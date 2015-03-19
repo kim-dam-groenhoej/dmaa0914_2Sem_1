@@ -31,11 +31,34 @@ public class ProductDB {
 		
 	}
 	
-	public void updateProduct(Product product)
+	public int updateProduct(Product product)
 	{
+		int rc=-1;
 		
+		String query ="UPDATE Product SET "+
+			 	  "name ='"+ product.getName() +"', "+
+			 	  "purchaseprice ='"+ product.getPurchasePrice() + "', " +
+                  "salesprice ='"+ product.getSalePrice() + "', " +
+                  "rentprice ='"+ product.getRentPrice() + "', " +
+                  "minstock ='"+ product.getMinStock() + "', " +
+                  "amountinstock ='"+ product.getAmountInStock() + "', " +
+                  //"supplierid ='"+ product.getSupplier().getId() + "' " +
+                  //"countryid ='"+ product.getcountry().getId() + "' " +
+                  "supplierid ='"+ 1 + "', " +
+                  "countryid ='"+ 1 + "' " +                  
+                  " WHERE id = '"+ product.getId() + "'";
+		
+		try{
+			Statement stmt = con.createStatement();
+			stmt.setQueryTimeout(5);
+			rc = stmt.executeUpdate(query);
+			stmt.close();
+		}catch(Exception ex){
+	 	 	System.out.println("Update exception in employee db: "+ex);
+	  	}
+		return rc;
 	}
-	public void deleProduct(int productno)
+	public void deleteProduct(int productno)
 	{
 		
 	}

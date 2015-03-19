@@ -13,6 +13,7 @@ use dmaa0914_2Sem_1;
      zipcode    int not null,
 	 phonenumber nvarchar(25) not null,
 	 email		nvarchar(100) not null,
+	 customertype int not null,
 	 foreign key(zipcode) references City(zipcode)
 	 );
 

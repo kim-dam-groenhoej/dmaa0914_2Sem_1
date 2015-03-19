@@ -8,7 +8,10 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import ControllerLayer.ProductCtr;
+import ModelLayer.Country;
+import ModelLayer.Equipment;
 import ModelLayer.Product;
+import ModelLayer.Supplier;
 
 /**
  * @author Kim Dam Grønhøj
@@ -16,12 +19,22 @@ import ModelLayer.Product;
  */
 public class JunitProduct {
 	
-	@Test
+	/*@Test
 	public void canFindProduct(){
 		ProductCtr ctr = new ProductCtr();
 		Product p = ctr.findProduct(1);
 		System.out.println(p.getName());
 		assertNotNull(p);
+	}*/
+	
+	
+	@Test
+	public void canUpdateProduct(){
+		Product p1 = new Equipment(1,"cowboyhat",150.00,800.00,0.00,null,4,5,null,"hat","hest");
+		ProductCtr ctr = new ProductCtr();		
+		int p = ctr.updateProduct(p1);
+		System.out.println(p);
+		assertEquals(1, p); 
 	}
 
 }

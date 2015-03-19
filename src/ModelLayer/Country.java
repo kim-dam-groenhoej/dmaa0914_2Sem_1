@@ -9,15 +9,17 @@ package ModelLayer;
  */
 public class Country {
 	private String name;
+	private int id;
 	
 	/**
 	 * Create a instance of Country
 	 * @param zipCode current zipCode
 	 * @param name current city name
 	 */
-	public Country(String name)
+	public Country(String name, int id)
 	{
 		this.name = name;
+		this.id = id;
 	}
 
 	/**
@@ -25,6 +27,10 @@ public class Country {
 	 */
 	public String getName() {
 		return name;
+	}
+	
+	public int getId(){
+		return id;
 	}
 
 	/**

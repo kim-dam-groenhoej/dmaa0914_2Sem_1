@@ -12,22 +12,33 @@ public class ProductCtr {
 		productdb = new ProductDB();
 	}
 	
+	
+	/**  Calls the function findProduct on ProductDB class
+	 * @return Product
+	 */
 	public Product findProduct(int productno)
 	{
 		return productdb.findProduct(productno);
 	}
 	
+	/**  Calls the function createProduct on ProductDB class
+	 */
 	public void createProduct(int productno)
 	{
 		productdb.createProduct(productno);
 	}
 	
-	public void updateProduct(Product product)
+	/**  Calls the function updateProduct on ProductDB class
+	 */
+	public int updateProduct(Product product)
 	{
-		productdb.updateProduct(product);
+		return productdb.updateProduct(product);
 	}
-	public void deleProduct(int productno)
+	
+	/**  Calls the function deleteProduct on ProductDB class
+	 */
+	public void deleteProduct(int productno)
 	{
-		productdb.deleProduct(productno);
+		productdb.deleteProduct(productno);
 	}
 }

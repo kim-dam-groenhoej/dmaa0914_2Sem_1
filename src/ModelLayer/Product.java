@@ -27,11 +27,14 @@ public abstract class Product {
 		this.supplier = supplier;
 		
 	}
+	
+	
 
 	/**  Gets the id
 	 * @return id
 	 */
 	public int getId() {
+		
 		return id;
 	}
 
