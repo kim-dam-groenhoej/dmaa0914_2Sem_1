@@ -22,7 +22,7 @@ public class SaleDB {
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setQueryTimeout(5);
-			stmt.setInt(1, 1);
+			stmt.setInt(1, id);
 			
 			result = stmt.executeQuery();
 			result.next();
