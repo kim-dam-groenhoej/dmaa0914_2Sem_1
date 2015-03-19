@@ -20,16 +20,27 @@ public class SaleCtr {
 	private CustomerCtr customerCtr;
 	private SaleDB saleDb;
 	
+	/**
+	 * 
+	 */
 	public SaleCtr()
 	{
 		
 	}
 	
+	/**
+	 * Starts a new sale
+	 */
 	public void createSale()
 	{
 		s = new Sale();
 	}
 	
+	/**
+	 * @param productNo The number of the product
+	 * @param quantity The quantity of the given product
+	 * @return The product with the corresponding product number
+	 */
 	public Product enterProduct(int productNo, int quantity)
 	{
 		Product p = productCtr.findProduct(productNo);
@@ -38,6 +49,10 @@ public class SaleCtr {
 		return p;
 	}
 	
+	/**
+	 * @param phoneNo the phone number of the customer to find
+	 * @return The customer
+	 */
 	public Customer findCustomer(String phoneNo)
 	{
 		Customer c = customerCtr.findCustomer(phoneNo);
@@ -45,11 +60,17 @@ public class SaleCtr {
 		return c;
 	}
 	
+	/**
+	 * @param date The date to set
+	 */
 	public void setDeliveryDate(Date date)
 	{
 		s.setDeliveryDate(date);
 	}
 	
+	/**
+	 * Saves and finishes the current sale
+	 */
 	public void  finishSale()
 	{
 		saleDb.saveSale(s);
