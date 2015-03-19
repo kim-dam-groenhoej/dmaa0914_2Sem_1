@@ -1,5 +1,6 @@
 package ModelLayer;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -18,6 +19,16 @@ public class Invoice {
 		this.invoiceNo = invoiceNo;
 		this.paymentDate = paymentDate;
 		this.total = total;
+	}
+
+	public Invoice(double total) {
+		this.total = total;
+		
+		//Set paymentdate to the date 2 weeks from now.
+		Calendar c = Calendar.getInstance();
+		c.setTime(new Date());
+		c.add(Calendar.DATE, 14);
+		this.paymentDate = c.getTime();
 	}
 
 	/**

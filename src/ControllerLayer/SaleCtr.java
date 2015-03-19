@@ -25,7 +25,9 @@ public class SaleCtr {
 	 */
 	public SaleCtr()
 	{
-		
+		productCtr = new ProductCtr();
+		customerCtr = new CustomerCtr();
+		saleDb = new SaleDB();
 	}
 	
 	/**
@@ -55,10 +57,9 @@ public class SaleCtr {
 	 */
 	public Customer findCustomer(String phoneNo)
 	{
-		//Customer c = customerCtr.findCustomer(phoneNo);
-		//s.setCustomer(c);
-		//return c;
-		return null;
+		Customer c = customerCtr.findCustomer(phoneNo);
+		s.setCustomer(c);
+		return c;
 	}
 	
 	/**
@@ -72,8 +73,8 @@ public class SaleCtr {
 	/**
 	 * Saves and finishes the current sale
 	 */
-	public void  finishSale()
+	public void finishSale()
 	{
-		//saleDb.saveSale(s);
+		saleDb.saveSale(s);
 	}
 }

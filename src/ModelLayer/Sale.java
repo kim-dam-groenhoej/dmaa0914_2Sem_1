@@ -9,25 +9,30 @@ import ModelLayer.Enums.DeliveryStatus;
 public class Sale {
 	private int id;
 	private Date deliveryDate;
+	private Date date;
 	private DeliveryStatus deliverystatus;
 	private Customer customer;
 	private int invoiceno;
 	private ArrayList<PartOrder> partorders;
 	
-	public Sale(int id, Date date,DeliveryStatus deliverystatus, Customer customer, int invoiceno )
+	public Sale(int id, Date date, Date deliveryDate, DeliveryStatus deliverystatus, Customer customer, int invoiceno )
 	{
 		this.id = id;
-		this.deliveryDate = date;
+		this.date = date;
+		this.deliveryDate = deliveryDate;
 		this.deliverystatus = deliverystatus;
 		this.customer = customer;
 		this.invoiceno = invoiceno;
 		partorders = new ArrayList<PartOrder>();
+		
+		
 	}
 	
 	public Sale()
 	{
 		this.deliverystatus = DeliveryStatus.NOTDELIVERED;
 		this.partorders = new ArrayList<PartOrder>();
+		this.date = new Date();
 	}
 /**
  *  Gets the id
@@ -50,6 +55,14 @@ public class Sale {
 		return deliveryDate;
 	}
 
+	/**
+	 * Gets the date 
+	 * @return date
+	 */
+
+	public Date getDate() {
+		return date;
+	}
 	
 	/**
 	 * Sets the date 
@@ -116,6 +129,15 @@ public class Sale {
 	 */
 	public void addPartorders(PartOrder partorder) {
 		partorders.add(partorder);
+	}
+
+	public double getTotal() {
+		double total = 0.00;
+		for(PartOrder partOrder : partorders)
+		{
+			total += partOrder.getTotalPrice();
+		}
+		return total;
 	}	
 	
 }

@@ -68,4 +68,8 @@ public class PartOrder {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+
+	public double getTotalPrice() {
+		return this.product.getSalePrice() * this.getAmount();
+	}
 }

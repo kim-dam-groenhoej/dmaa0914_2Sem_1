@@ -6,9 +6,11 @@ package UnitTest;
 import static org.junit.Assert.*;
 
 import java.sql.SQLException;
+import java.util.Date;
 
 import org.junit.Test;
 
+import ControllerLayer.SaleCtr;
 import DBLayer.SaleDB;
 import ModelLayer.Customer;
 
@@ -19,13 +21,13 @@ import ModelLayer.Customer;
 public class JunitSale {
 
 	@Test
-	public void test() throws Exception {
-		SaleDB s = new SaleDB();
-		Customer c = s.simgleWhereFindCustomer(1);
-		
-		System.out.println("customer ID " + c.getId());
-		assert("asd" == "asd");
-		assertEquals("customer ID", c.getId());
+	public void test(){
+		SaleCtr saleCtr = new SaleCtr();
+		saleCtr.createSale();
+		saleCtr.enterProduct(1, 2);
+		saleCtr.findCustomer("98909829");
+		saleCtr.setDeliveryDate(new Date());
+		saleCtr.finishSale();
 	}
 
 }
