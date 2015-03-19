@@ -60,7 +60,7 @@ public class CustomerDB {
 				stmt.close();
 			}
 		}catch(Exception e){
-			
+		System.out.println(e.getMessage());	
 		}
 		
 		return customer;
@@ -100,7 +100,7 @@ public class CustomerDB {
 		
 		if(wClause.length()>0)
 		{
-			query=query+"where " + wClause;
+			query=query+" where " + wClause;
 		}	
 		return query;
 	}

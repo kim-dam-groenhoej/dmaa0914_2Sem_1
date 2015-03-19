@@ -7,15 +7,21 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ControllerLayer.CustomerCtr;
+import ModelLayer.Customer;
+
 /**
- * @author Kim Dam Grønhøj
+ * @author Kim Dam Grï¿½nhï¿½j
  *
  */
 public class JunitCustomer {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+
+@Test 
+public void canFindCustomer(){
+		CustomerCtr customerCtr = new CustomerCtr();
+		Customer customer = customerCtr.findCustomer("98909829");
+		assertNotNull(customer);
+}
 
 }
