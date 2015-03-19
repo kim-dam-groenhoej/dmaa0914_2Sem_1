@@ -1,4 +1,6 @@
 package ControllerLayer;
+import java.sql.SQLException;
+
 import ModelLayer.Customer;
 import DBLayer.CustomerDB;
 
@@ -22,20 +24,19 @@ public class CustomerCtr {
 	{
 		return customerDB.findCustomer(phonenumber);
 	}
-	/*This funktion creates customer by phonenumber*/
-	public void createCustomer(String phonenumber)
+	/*This funktion creates customer by Customer model*/
+	public void createCustomer(Customer customer) throws Exception
 	{
-		customerDB.createCustomer(phonenumber);
+		customerDB.createCustomer(customer);
 	}
-	/*This funktion updates customer by customer*/
+	/*This funktion updates customer by phonenumber and customer*/
 	public void upDateCustomer(String phoneNumber, Customer customer) throws Exception
 	{
 		customerDB.upDateCustomer(phoneNumber, customer);
 	}
 	/*This funktion delete customer by phonenumber*/
-	public void delCustomer(int phonenumber)
+	public void delCustomer(String phonenumber) throws SQLException
 	{
 		customerDB.delCustomer(phonenumber);
 	}
-	
 }

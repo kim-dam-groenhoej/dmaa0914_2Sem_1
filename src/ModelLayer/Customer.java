@@ -2,7 +2,11 @@ package ModelLayer;
 import ModelLayer.Enums.CustomerType;
 
 
-
+/**
+ * 
+ * @author Frank, Kim Dam Grønhøj
+ *
+ */
 public class Customer {
 
 	private int id;
@@ -15,14 +19,14 @@ public class Customer {
 	private CustomerType customertype;
 	
 	   public Customer(int id, String lname, String fname, String address, City city, String phonenumber, String email, CustomerType customertype) {
-	       this.id = id; 
+	       this.id = id;
+	       this.fname = fname;
 	       this.lname = lname;
 	       this.address = address;
 	       this.city = city;
 	       this.phonenumber = phonenumber;
 	       this.email = email;
 	       this.customertype = customertype;
-		   
 	    }
 	   
 		/**  Gets the id
