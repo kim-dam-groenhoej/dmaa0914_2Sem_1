@@ -16,9 +16,9 @@ public class DbConnection
 {
 	//Constants used to get access to the database
 	//SQL Server
-    private static final String  driver = "jdbc:sqlserver://kraka.ucn.dk:1433";
-    private static final String  databaseName = ";databaseName=dmaa0914_2Sem_1";
-    private static final String  userName = "; user=dmaa0914_2Sem_1";
+    private static final String driver = "jdbc:sqlserver://kraka.ucn.dk:1433";
+    private static final String databaseName = ";databaseName=dmaa0914_2Sem_1";
+    private static final String userName = "; user=dmaa0914_2Sem_1";
     private static final String password = ";password=IsAllowed";
    
     private DatabaseMetaData dma;
@@ -137,4 +137,4 @@ public class DbConnection
         System.out.println(e.getMessage());
       }
     }
-}//end DbConnection
+}

@@ -8,7 +8,6 @@ package ModelLayer;
  *
  */
 public class Country {
-	private int zipCode;
 	private String name;
 	
 	/**
@@ -16,24 +15,9 @@ public class Country {
 	 * @param zipCode current zipCode
 	 * @param name current city name
 	 */
-	public Country(int zipCode, String name)
+	public Country(String name)
 	{
-		this.zipCode = zipCode;
 		this.name = name;
-	}
-
-	/**
-	 * @return the zipCode
-	 */
-	public int getZipCode() {
-		return zipCode;
-	}
-
-	/**
-	 * @param zipCode the zipCode to set
-	 */
-	public void setZipCode(int zipCode) {
-		this.zipCode = zipCode;
 	}
 
 	/**
