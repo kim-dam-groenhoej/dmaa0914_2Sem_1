@@ -1,6 +1,7 @@
 package DBLayer;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import ModelLayer.City;
@@ -22,21 +23,70 @@ public class CustomerDB {
 		String wClause = " phonenumber = '" + phonenumber +"'";
 		return singleWhere(wClause);
 	}
-	
-	
 
 	public void createCustomer(String phonenumber)
 	{
 		
 	}
 	
-	public void upDateCustomer(Customer customer)
+	public void upDateCustomer(String phoneNumber, Customer customer)
 	{
+		String wClause = " phonenumber = '" + phoneNumber + "'";
 		
+		int customerType = 1;
+		CustomerType type = customer.getCustomertype();
+		
+		switch (type)
+		{
+			case PRIVATE: {
+				customerType = 1;
+				break;
+			}			
+			case CLUB: {
+				customerType = 2;
+				break;
+			}
+				
+		}
+		
+		String sClause = " fname = '" + customer.getFname() + "', lname = '" + customer.getLname() + "', address = '" + customer.getAddress() + "', city = " + customer.getCity().getZipCode() + ", phonenumber = '" + customer.getPhonenumber() + "', email = '" + customer.getEmail() + "', customertype = " + customerType + " ";
+		
+		try {
+			singleWhereUpdate(wClause, sClause);
+		} catch (Exception ex) {
+		
+		}
 	}
+	
 	public void delCustomer(int phonenumber)
 	{
 		
+	}
+	
+	private void singleWhereUpdate(String wClause, String sClause) throws Exception
+	{
+		Statement stmt = con.createStatement();
+		stmt.setQueryTimeout(5);
+		String query = buildQueryUpdate(wClause, sClause);
+		
+		stmt.executeUpdate(query);
+	}
+	
+	private String buildQueryUpdate(String wClause, String sClause)
+	{
+		String query = "UPDATE [Customer] SET ";
+
+		if(sClause.length()>0)
+		{
+			query += sClause;
+		}
+		
+		if(wClause.length()>0)
+		{
+			query += sClause;
+		}
+		
+		return query;
 	}
 	
 	/**

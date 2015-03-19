@@ -24,6 +24,7 @@ public class JunitSale {
 		Customer c = s.simgleWhereFindCustomer(1);
 		
 		System.out.println("customer ID " + c.getId());
+		assert("asd" == "asd");
 		assertEquals("customer ID", c.getId());
 	}
 
