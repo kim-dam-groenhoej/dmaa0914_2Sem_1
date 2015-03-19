@@ -90,11 +90,11 @@ public class DBConnection
     }
     
     //this method is used to get the instance of the connection
-    public static DbConnection getInstance()
+    public static DBConnection getInstance()
     {
         if (instance == null)
         {
-          instance = new DbConnection();
+          instance = new DBConnection();
         }
         
         return instance;
