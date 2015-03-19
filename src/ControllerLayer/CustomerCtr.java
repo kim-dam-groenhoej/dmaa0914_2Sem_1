@@ -28,9 +28,9 @@ public class CustomerCtr {
 		customerDB.createCustomer(phonenumber);
 	}
 	/*This funktion updates customer by customer*/
-	public void upDateCustomer(Customer customer)
+	public void upDateCustomer(String phoneNumber, Customer customer)
 	{
-		customerDB.upDateCustomer(customer);
+		customerDB.upDateCustomer(phoneNumber, customer);
 	}
 	/*This funktion delete customer by phonenumber*/
 	public void delCustomer(int phonenumber)
