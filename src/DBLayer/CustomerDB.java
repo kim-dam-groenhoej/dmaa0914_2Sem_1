@@ -29,7 +29,7 @@ public class CustomerDB {
 		
 	}
 	
-	public void upDateCustomer(String phoneNumber, Customer customer)
+	public void upDateCustomer(String phoneNumber, Customer customer) throws Exception
 	{
 		String wClause = " phonenumber = '" + phoneNumber + "'";
 		
@@ -51,11 +51,7 @@ public class CustomerDB {
 		
 		String sClause = " fname = '" + customer.getFname() + "', lname = '" + customer.getLname() + "', address = '" + customer.getAddress() + "', city = " + customer.getCity().getZipCode() + ", phonenumber = '" + customer.getPhonenumber() + "', email = '" + customer.getEmail() + "', customertype = " + customerType + " ";
 		
-		try {
-			singleWhereUpdate(wClause, sClause);
-		} catch (Exception ex) {
-		
-		}
+		singleWhereUpdate(wClause, sClause);
 	}
 	
 	public void delCustomer(int phonenumber)
@@ -85,7 +81,7 @@ public class CustomerDB {
 		
 		if(wClause.length()>0)
 		{
-			query += sClause;
+			query += wClause;
 		}
 		
 		return query;

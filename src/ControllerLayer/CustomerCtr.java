@@ -28,7 +28,7 @@ public class CustomerCtr {
 		customerDB.createCustomer(phonenumber);
 	}
 	/*This funktion updates customer by customer*/
-	public void upDateCustomer(String phoneNumber, Customer customer)
+	public void upDateCustomer(String phoneNumber, Customer customer) throws Exception
 	{
 		customerDB.upDateCustomer(phoneNumber, customer);
 	}
