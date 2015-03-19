@@ -12,7 +12,7 @@ import java.sql.*;
  * one object of the class is generated
  * Version for Sql Server 2014 the database i located on kraka.ucn.dk
  */
-public class DbConnection
+public class DBConnection
 {
 	//Constants used to get access to the database
 	//SQL Server
@@ -24,12 +24,12 @@ public class DbConnection
     private DatabaseMetaData dma;
     private static Connection con;
     // an instance of the class is generetated
-    private static DbConnection  instance = null;
+    private static DBConnection  instance = null;
 
     /**
      * the constructor is private to ensure that only one object of this class is created
      */
-    private DbConnection()
+    private DBConnection()
     {
     	String url = driver + databaseName + userName + password;
 
@@ -90,11 +90,11 @@ public class DbConnection
     }
     
     //this method is used to get the instance of the connection
-    public static DbConnection getInstance()
+    public static DBConnection getInstance()
     {
         if (instance == null)
         {
-          instance = new DbConnection();
+          instance = new DBConnection();
         }
         
         return instance;
