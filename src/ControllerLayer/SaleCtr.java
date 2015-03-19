@@ -4,6 +4,8 @@ import java.util.Date;
 
 import DBLayer.ProductDB;
 import DBLayer.SaleDB;
+import ModelLayer.Customer;
+import ModelLayer.PartOrder;
 import ModelLayer.Product;
 import ModelLayer.Sale;
 
