@@ -70,6 +70,8 @@ public class CustomerDB {
 		String query = buildQueryUpdate(wClause, sClause);
 		
 		stmt.executeUpdate(query);
+		
+		stmt.close();
 	}
 	
 	private String buildQueryUpdate(String wClause, String sClause)
