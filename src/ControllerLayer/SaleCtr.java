@@ -55,9 +55,10 @@ public class SaleCtr {
 	 */
 	public Customer findCustomer(String phoneNo)
 	{
-		Customer c = customerCtr.findCustomer(phoneNo);
-		s.setCustomer(c);
-		return c;
+		//Customer c = customerCtr.findCustomer(phoneNo);
+		//s.setCustomer(c);
+		//return c;
+		return null;
 	}
 	
 	/**
@@ -73,6 +74,6 @@ public class SaleCtr {
 	 */
 	public void  finishSale()
 	{
-		saleDb.saveSale(s);
+		//saleDb.saveSale(s);
 	}
 }
