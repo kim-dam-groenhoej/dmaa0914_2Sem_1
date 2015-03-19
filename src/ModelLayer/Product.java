@@ -8,20 +8,20 @@ public class Product {
 	private double purchasePrice;
 	private double salePrice;
 	private double rentPrice;
-	private String countryOfOrigin;
+	private Country country;
 	private int minStock;
 	private int amountInStock;
 	private Supplier supplier;
 	
 	
-	public Product(int id, String name, double purchasePrice,double salePrice, double rentPrice, String countryOfOrigin, int minStock, int amountinstock, Supplier supplier  )
+	public Product(int id, String name, double purchasePrice,double salePrice, double rentPrice, Country country, int minStock, int amountinstock, Supplier supplier  )
 	{
 		this.id = id;
 		this.name = name;
 		this.purchasePrice = purchasePrice;
 		this.salePrice = salePrice;
 		this.rentPrice = rentPrice;
-		this.countryOfOrigin = countryOfOrigin;
+		this.country = country;
 		this.minStock = minStock;
 		this.amountInStock = amountinstock;
 		this.supplier = supplier;
@@ -92,17 +92,17 @@ public class Product {
 		this.rentPrice = rentPrice;
 	}
 
-	/**  Gets the countryOfOrigin
-	 * @return countryOfOrigin
+	/**  Gets the country
+	 * @return country
 	 */
-	public String getCountryOfOrigin() {
-		return countryOfOrigin;
+	public Country getcountry() {
+		return country;
 	}
 
-	/**  sets the countryOfOrigin
+	/**  sets the country
 	 */
-	public void setCountryOfOrigin(String countryOfOrigin) {
-		this.countryOfOrigin = countryOfOrigin;
+	public void setCountry(Country country) {
+		this.country = country;
 	}
 
 	/**  Gets the minStock

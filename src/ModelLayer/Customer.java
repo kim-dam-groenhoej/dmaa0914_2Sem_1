@@ -9,16 +9,16 @@ public class Customer {
 	private String lname;
 	private String fname;
 	private String address;
-	private String zipcode;
+	private City city;
 	private String phonenumber;
 	private String email;
 	private CustomerType customertype;
 	
-	   public Customer(int id, String lname, String fname, String address, String zipcode, String phonenumber, String email, CustomerType customertype) {
+	   public Customer(int id, String lname, String fname, String address, City city, String phonenumber, String email, CustomerType customertype) {
 	       this.id = id; 
 	       this.lname = lname;
 	       this.address = address;
-	       this.zipcode = zipcode;
+	       this.city = city;
 	       this.phonenumber = phonenumber;
 	       this.email = email;
 	       this.customertype = customertype;
@@ -75,17 +75,17 @@ public class Customer {
 			this.address = address;
 		}
 
-		/**  Gets the zipcode
-		 * @return zipcode
+		/**  Gets the city
+		 * @return city
 		 */
-		public String getZipcode() {
-			return zipcode;
+		public City getCity() {
+			return city;
 		}
 
-		/**  sets the zipcode
+		/**  sets the city
 		 */
-		public void setZipcode(String zipcode) {
-			this.zipcode = zipcode;
+		public void setCity(City city) {
+			this.city = city;
 		}
 
 		/**  Gets the phonenumber

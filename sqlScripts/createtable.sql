@@ -1,4 +1,4 @@
-use WesternStyle;
+use dmaa0914_2Sem_1;
 
 	create table City(
 		zipcode int not null primary key,
