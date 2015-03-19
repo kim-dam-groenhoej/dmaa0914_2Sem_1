@@ -1,6 +1,6 @@
 package ModelLayer;
 
-public class Product {
+public abstract class Product {
 	
 	
 	private int id;

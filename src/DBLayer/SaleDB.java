@@ -6,6 +6,7 @@ public class SaleDB {
 	
 	public SaleDB()
 	{
+		
 	}
 	
 	public void saveSale(Sale sale)
