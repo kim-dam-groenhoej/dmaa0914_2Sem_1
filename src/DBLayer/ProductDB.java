@@ -26,9 +26,34 @@ public class ProductDB {
 	}
 	
 
-	public void createProduct(int productno)
+	public int createProduct(Product product) throws Exception
 	{
+		int rc = -1;
+		String query ="INSERT INTO Product(name,purchaseprice, salesprice,rentprice,minstock,amountinstock,supplierid,countryid) VALUES('"+
+				product.getName() +"','" +
+				product.getPurchasePrice() +"','" +
+				product.getSalePrice() +"','" +
+				product.getRentPrice() +"','" +
+				product.getMinStock() +"','" +
+				product.getAmountInStock() +"'," +
+				1 +"," + 2 + ")";
+				
+                //"supplierid ='"+ product.getSupplier().getId() + "' " +
+                //"countryid ='"+ product.getcountry().getId() + "' " +
+                
 		
+		try{ // insert new employee +  dependent
+	          Statement stmt = con.createStatement();
+	          stmt.setQueryTimeout(5);
+	     	  rc = stmt.executeUpdate(query);
+	          stmt.close();
+	      }//end try
+	       catch(SQLException ex){
+	    	   System.out.println(ex.getMessage());
+	          System.out.println("Product ikke oprettet");
+	          throw new Exception ("Product is not inserted correct");
+	       }
+	       return rc;
 	}
 	
 	public int updateProduct(Product product)
@@ -58,9 +83,22 @@ public class ProductDB {
 	  	}
 		return rc;
 	}
-	public void deleteProduct(int productno)
+	
+	public int deleteProduct(int productno)
 	{
-		
+		int rc =-1;
+		String query ="DELETE FROM Product WHERE id = '"+productno +"'";
+		try{ // delete from employee
+	 		Statement stmt = con.createStatement();
+	 		stmt.setQueryTimeout(5);
+	 	  	rc = stmt.executeUpdate(query);
+	 	  	stmt.close();
+  		}//slut try	
+   	        catch(Exception ex){
+   	        System.out.println(ex.getMessage());
+	 	  	System.out.println("Delete exception in employee db: "+ex);
+   	        }
+		return(rc);
 	}
 	
 	private Product singleWhere(String wClause) {

@@ -23,9 +23,15 @@ public class ProductCtr {
 	
 	/**  Calls the function createProduct on ProductDB class
 	 */
-	public void createProduct(int productno)
+	public int createProduct(Product product)
 	{
-		productdb.createProduct(productno);
+		try {
+			return productdb.createProduct(product);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			
+		}
+		return 0;
 	}
 	
 	/**  Calls the function updateProduct on ProductDB class
@@ -37,8 +43,8 @@ public class ProductCtr {
 	
 	/**  Calls the function deleteProduct on ProductDB class
 	 */
-	public void deleteProduct(int productno)
+	public int deleteProduct(int productno)
 	{
-		productdb.deleteProduct(productno);
+		return productdb.deleteProduct(productno);
 	}
 }

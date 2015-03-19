@@ -28,6 +28,29 @@ public abstract class Product {
 		
 	}
 	
+	/**
+	 * Constructor for creating new Product.
+	 * @param name
+	 * @param purchasePrice
+	 * @param salePrice
+	 * @param rentPrice
+	 * @param country
+	 * @param minStock
+	 * @param amountinstock
+	 * @param supplier
+	 */
+	public Product(String name, double purchasePrice,double salePrice, double rentPrice, Country country, int minStock, int amountinstock, Supplier supplier  )
+	{
+		this.name = name;
+		this.purchasePrice = purchasePrice;
+		this.salePrice = salePrice;
+		this.rentPrice = rentPrice;
+		this.country = country;
+		this.minStock = minStock;
+		this.amountInStock = amountinstock;
+		this.supplier = supplier;
+		
+	}
 	
 
 	/**  Gets the id

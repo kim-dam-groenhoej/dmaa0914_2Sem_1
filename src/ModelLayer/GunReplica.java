@@ -28,6 +28,26 @@ public class GunReplica extends Product {
 		this.material = material;
 		this.calibre = calibre;
 	}
+	
+	
+	/**
+	 * Constructor for creating new Product.
+	 * @param name
+	 * @param purchasePrice
+	 * @param salePrice
+	 * @param rentPrice
+	 * @param country
+	 * @param minStock
+	 * @param amountinstock
+	 * @param supplier
+	 * @param material
+	 * @param calibre
+	 */
+	public GunReplica( String name, double purchasePrice, double salePrice, double rentPrice, Country country, int minStock, int amountinstock, Supplier supplier, String material, String calibre) {
+		super( name, purchasePrice, salePrice, rentPrice, country, minStock, amountinstock, supplier);
+		this.material = material;
+		this.calibre = calibre;
+	}
 
 	/**
 	 * @return the material
