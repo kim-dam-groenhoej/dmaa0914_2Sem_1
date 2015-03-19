@@ -5,7 +5,6 @@ import ModelLayer.Product;
 public class ProductDB {
 
 	
-	
 	public ProductDB()
 	{
 		

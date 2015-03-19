@@ -33,7 +33,7 @@ public class SaleCtr {
 	public Product enterProduct(int productNo, int quantity)
 	{
 		Product p = productCtr.findProduct(productNo);
-		PartOrder po = new PartOrder(p, quantity);
+		PartOrder po = new PartOrder(s,p, quantity);
 		s.addPartorders(po);
 		return p;
 	}

@@ -17,7 +17,7 @@ public class Sale {
 	public Sale(int id, Date date,DeliveryStatus deliverystatus, Customer customer, int invoiceno )
 	{
 		this.id = id;
-		this.date = date;
+		this.deliveryDate = date;
 		this.deliverystatus = deliverystatus;
 		this.customer = customer;
 		this.invoiceno = invoiceno;
