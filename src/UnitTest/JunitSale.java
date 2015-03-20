@@ -20,7 +20,7 @@ import ModelLayer.Customer;
  */
 public class JunitSale {
 
-	@Test
+/*	@Test
 	public void test(){
 		SaleCtr saleCtr = new SaleCtr();
 		saleCtr.createSale();
@@ -28,6 +28,6 @@ public class JunitSale {
 		saleCtr.findCustomer("98909829");
 		saleCtr.setDeliveryDate(new Date());
 		saleCtr.finishSale();
-	}
+	}*/
 
 }
